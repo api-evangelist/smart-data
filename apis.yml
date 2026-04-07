@@ -8,9 +8,9 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Data Management
-  - Data Integration
   - Analytics
+  - Data Integration
+  - Data Management
 url: >-
   https://raw.githubusercontent.com/api-evangelist/smart-data/refs/heads/main/apis.yml
 created: '2026-03-16'
