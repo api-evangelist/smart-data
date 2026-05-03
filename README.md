@@ -1,25 +1,29 @@
-# Smart Data (smart-data)
-Smart Data refers to data management platforms and APIs that enable intelligent processing, integration, and analytics of structured and unstructured data. Smart Data platforms provide APIs for data enrichment, quality management, and real-time data processing capabilities.
+# Smart Data
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/smart-data/refs/heads/main/apis.yml)
+Smart Data refers to intelligent data management platforms and APIs that enable organizations to process, integrate, enrich, and analyze structured and unstructured data in real-time. Smart Data platforms provide APIs for data enrichment, quality management, real-time data processing, master data management, and analytics integration.
 
-## Scope
+## Overview
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+Key capabilities of Smart Data platforms include:
 
-## Tags:
+- **Data Enrichment**: Augmenting records with entity information, company details, contact data, and semantic classifications
+- **Data Integration**: ETL pipelines, real-time event streaming, webhook delivery, and bidirectional data sync across enterprise systems
+- **Data Quality**: Automated profiling, anomaly detection, deduplication, standardization, and validation rules
+- **Real-Time Processing**: Streaming data pipelines that transform raw data into actionable business intelligence
 
- - Data Management, Data Integration, Analytics
+## APIs
 
-## Timestamps
+| API | Description |
+|-----|-------------|
+| Smart Data Enrichment API | Enriching records with additional context, metadata, and business intelligence |
+| Smart Data Integration API | Connecting and synchronizing data across disparate systems and applications |
+| Smart Data Quality API | Assessing, cleansing, and validating data quality at scale |
 
-- **Created:** 2026-03-16 
-- **Modified:** 2026-03-16 
+## Tags
+
+Analytics, Data Integration, Data Management, Data Enrichment, Data Quality, Real-Time Processing, Master Data Management, Streaming
 
 ## Maintainers
 
 **FN:** Kin Lane
-
 **Email:** kin@apievangelist.com
