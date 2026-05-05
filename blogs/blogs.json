@@ -1,0 +1,13 @@
+{
+  "repo": "smart-data",
+  "feeds": [
+    {
+      "source": "https://www.smart-data.com/blog/",
+      "feed_url": "https://www.smart-data.com/feed/",
+      "saved": 3,
+      "title": "SmartData"
+    }
+  ],
+  "post_count": 3,
+  "fetched": "2026-05-03T23:37:17Z"
+}
