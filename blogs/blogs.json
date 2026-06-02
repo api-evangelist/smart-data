@@ -2,12 +2,14 @@
   "repo": "smart-data",
   "feeds": [
     {
-      "source": "https://www.smart-data.com/blog/",
-      "feed_url": "https://www.smart-data.com/feed/",
-      "title": "SmartData",
-      "saved": 0
+      "source": "https://www.smart-data.com/feed/",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://www.smart-data.com/docs/",
+      "error": "HTTPError"
     }
   ],
   "post_count": 3,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
