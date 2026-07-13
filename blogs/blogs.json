@@ -2,11 +2,10 @@
   "repo": "smart-data",
   "feeds": [
     {
-      "source": "https://www.smart-data.com/blog/",
-      "saved": 0,
-      "error": "404 Not Found on /blog/ and /blog"
+      "source": "https://www.smart-data.com/docs/",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-27T13:10:29Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 3
 }
