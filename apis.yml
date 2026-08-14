@@ -1,99 +1,145 @@
 aid: smart-data
-accessModel:
-  pricing: freemium
-  onboarding: unknown
-  trial: false
-  try_now: false
-  public: false
-  label: Freemium
-  confidence: medium
-  source:
-  - plans
-  generated: '2026-07-22'
-  method: derived
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/smart-data.png
-name: Smart Data
+name: SmartData
 description: >-
-  Smart Data refers to intelligent data management platforms and APIs that
-  enable organizations to process, integrate, enrich, and analyze structured
-  and unstructured data in real-time. Smart Data platforms provide APIs for
-  data enrichment, quality management, real-time data processing, master data
-  management, and analytics integration. Key capabilities include automated
-  data cleansing, entity resolution, semantic enrichment, and streaming data
-  pipelines that help organizations turn raw data into actionable business
-  intelligence.
+  SmartData is a hosted drone-data workspace built and operated by National Drones, a
+  CASA ReOC holder and Registered Training Organisation headquartered at Level 34,
+  1 Eagle Street, Brisbane, Australia. Teams bring processed, viewer-ready outputs from
+  DJI Terra, Agisoft Metashape or their own photogrammetry workflow into SmartData and
+  share one secure browser workspace where clients and asset owners can inspect,
+  measure, compare and sign off on the data instead of passing files around. The
+  platform hosts orthomosaic views, Cesium 3D Tiles, tiled point clouds and Gaussian
+  Splat packages, layers AI-assisted inspection review, measurements, change detection,
+  reporting and role-based team governance over them, and is expanding into processing
+  and analytics workflows for DJI L3 LiDAR, Elios confined-space data, powerline
+  corridor analytics and forestry intelligence. It serves power and utilities,
+  telecommunications, mining and resources, forestry and environment, and
+  infrastructure and construction. SmartData is sold as an end-user SaaS product: it
+  publishes pricing, a public demo sandbox and self-service signup, but no API,
+  developer portal, SDK, webhook surface or machine-readable contract of any kind.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/smart-data.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/smart-data/refs/heads/main/apis.yml
+x-type: company
+x-tier: profile
+x-tier-reason: no-api-surface
+accessModel:
+  pricing: paid
+  onboarding: self-service
+  trial: false
+  try_now: true
+  public: false
+  label: Paid
+  confidence: high
+  source:
+    - https://www.smart-data.com/software/byo-data-hosting/#pricing
+    - https://demo.ndsmartdata.com/
+  generated: '2026-08-14'
+  method: searched
 created: '2026-03-16'
-modified: '2026-05-02'
+modified: '2026-08-14'
 specificationVersion: '0.19'
 tags:
-  - Analytics
-  - Data Integration
-  - Data Management
-  - Data Enrichment
-  - Data Quality
-  - Real-Time Processing
-  - Master Data Management
-  - Streaming
-apis:
-  - aid: smart-data:data-enrichment
-    name: Smart Data Enrichment API
-    description: >-
-      APIs for enriching data records with additional context, metadata, and
-      business intelligence. Data enrichment APIs accept raw records and
-      return augmented data with entity information, company details, contact
-      information, and semantic classifications to improve data quality and
-      completeness.
-    humanURL: https://www.smart-data.com/
-    tags:
-      - Data Enrichment
-      - Entity Resolution
-      - Data Quality
-    properties:
-      - type: Documentation
-        url: https://www.smart-data.com/docs/enrichment
-  - aid: smart-data:data-integration
-    name: Smart Data Integration API
-    description: >-
-      APIs for connecting and synchronizing data across disparate systems,
-      databases, and applications. Integration APIs support ETL pipelines,
-      real-time event streaming, webhook delivery, and bidirectional data sync
-      across enterprise systems including CRM, ERP, and data warehouses.
-    humanURL: https://www.smart-data.com/
-    tags:
-      - Data Integration
-      - ETL
-      - Streaming
-      - Webhooks
-    properties:
-      - type: Documentation
-        url: https://www.smart-data.com/docs/integration
-  - aid: smart-data:data-quality
-    name: Smart Data Quality API
-    description: >-
-      APIs for assessing, cleansing, and validating data quality at scale.
-      Data quality APIs provide automated profiling, anomaly detection,
-      deduplication, standardization, and validation rules to maintain
-      high-quality data across an organization's data assets.
-    humanURL: https://www.smart-data.com/
-    tags:
-      - Data Quality
-      - Data Cleansing
-      - Validation
-      - Deduplication
-    properties:
-      - type: Documentation
-        url: https://www.smart-data.com/docs/quality
+  - Drone Data
+  - Geospatial
+  - Asset Inspection
+  - Photogrammetry
+  - LiDAR
+  - Point Cloud
+  - 3D Visualization
+  - Gaussian Splatting
+  - Computer Vision
+  - Infrastructure
+  - Utilities
+  - Mining
+  - Forestry
+  - Australia
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/smart-data-domain-security.yml
   - type: Website
     url: https://www.smart-data.com/
-  - type: Documentation
-    url: https://www.smart-data.com/docs/
+  - type: Company
+    url: https://nationaldrones.com.au/
+  - type: Product
+    url: https://www.smart-data.com/software/
+  - type: Pricing
+    url: https://www.smart-data.com/software/byo-data-hosting/#pricing
+  - type: SignUp
+    url: https://app.ndsmartdata.com/accounts/register/
+  - type: Login
+    url: https://app.ndsmartdata.com/accounts/login/
+  - type: Sandbox
+    url: sandbox/smart-data-sandbox.yml
+  - type: Demo
+    url: https://demo.ndsmartdata.com/
+  - type: Support
+    url: https://www.smart-data.com/contact/
+  - type: Contact
+    url: https://www.smart-data.com/contact/
   - type: Blog
-    url: https://www.smart-data.com/blog/
+    url: https://www.smart-data.com/insights/
+  - type: CaseStudies
+    url: https://www.smart-data.com/case-studies/
+  - type: TermsOfService
+    url: https://www.smart-data.com/terms-and-conditions/
+  - type: PrivacyPolicy
+    url: https://www.smart-data.com/privacy-policy/
+  - type: Plans
+    url: plans/smart-data-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/smart-data-rate-limits.yml
+  - type: FinOps
+    url: finops/smart-data-finops.yml
+  - type: Lifecycle
+    url: lifecycle/smart-data-lifecycle.yml
+  - type: DomainSecurity
+    url: security/smart-data-domain-security.yml
+  - type: LLMsTxt
+    url: llms/smart-data-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-14'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    SmartData is National Drones' end-user drone-data workspace and ships no developer
+    surface at all - the 50-URL sitemap on www.smart-data.com has no /docs, /api or
+    /developers page, api./docs./developer. subdomains do not resolve on either
+    smart-data.com or ndsmartdata.com, and the only machine surface that exists is the
+    Django REST backend the web app itself calls at app.ndsmartdata.com/api/v1/, which
+    is undocumented and answers anonymous callers with 403
+    {"detail":"Authentication credentials were not provided."}.
+  evidence:
+    - url: https://www.smart-data.com/openapi.json
+      status: 404
+    - url: https://www.smart-data.com/docs/
+      status: 404
+    - url: https://www.smart-data.com/llms.txt
+      status: 404
+    - url: https://www.smart-data.com/.well-known/agent-card.json
+      status: 404
+    - url: https://app.ndsmartdata.com/api/v1/
+      status: 403
+    - url: https://app.ndsmartdata.com/api/v1/schema/
+      status: 404
+    - url: https://app.ndsmartdata.com/openapi.json
+      status: 404
+  checked: '2026-08-14'
+x-provenance-note: >-
+  2026-08-14 correction. Until this pass, this profile described a fictional company:
+  "Smart Data", a data enrichment / integration / data quality API vendor, with three
+  invented APIs (Smart Data Enrichment API, Smart Data Integration API, Smart Data
+  Quality API) each pointing at a Documentation URL under www.smart-data.com/docs/ that
+  has never existed and returns 404. The fabricated identity also drove fabricated
+  plans, rate-limit and FinOps artifacts. smart-data.com is in fact SmartData, National
+  Drones' drone-data hosting and inspection platform in Brisbane, Australia. The
+  invented APIs and their dead documentation pointers have been removed, the identity
+  and description rebuilt from the provider's own pages, and the plans/rate-limits/
+  finops artifacts replaced with the provider's published pricing and an honest zero
+  for rate limits. The three blog posts already in blogs/ were correctly harvested from
+  the real company's former WordPress site and are unaffected.
