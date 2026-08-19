@@ -1,0 +1,119 @@
+generated: '2026-08-14'
+method: probed
+source: live HTTP probes of every SmartData / National Drones host
+provider: SmartData
+providerId: smart-data
+description: >-
+  Probe record of the RFC 8615 /.well-known/ namespace on every host associated with
+  SmartData. NOTHING WAS FOUND. Every path on every host returned 404 with the site's
+  own HTML error page. This file documents an ABSENCE, not a presence - no WellKnown,
+  SecurityTxt, APICatalog or AgentCard pointer is wired into apis.yml as a result.
+hit_count: 0
+hosts:
+  - host: www.smart-data.com
+    note: Next.js marketing site; every unmatched path returns the site 404 shell.
+    probes:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /llms.txt
+        status: 404
+        file: null
+      - path: /robots.txt
+        status: 200
+        file: null
+        note: >-
+          Served, but a robots.txt is not a well-known document for scoring purposes.
+          Contents allow all agents and point at https://www.smart-data.com/sitemap.xml.
+  - host: app.ndsmartdata.com
+    note: The SmartData application host (nginx 1.30.3, Django/DRF).
+    probes:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /llms.txt
+        status: 404
+        file: null
+      - path: /robots.txt
+        status: 404
+        file: null
+  - host: www.nationaldrones.com.au
+    note: Parent company marketing site.
+    probes:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /llms.txt
+        status: 404
+        file: null
+notes:
+  - >-
+    demo.ndsmartdata.com is fronted by an S3/CloudFront origin that answers 403
+    AccessDenied for any path other than the demo viewer entry point, so no
+    /.well-known/ probe there can return a document either way.
+  - >-
+    No agent card exists on any host, so no a2a/ artifact was written. Per the
+    pipeline, an agent card is search-only and is never authored on a provider's behalf.

@@ -1,0 +1,72 @@
+generated: '2026-08-14'
+method: probed
+source: live HTTP probes of SmartData / National Drones hosts
+provider: SmartData
+providerId: smart-data
+description: >-
+  Lifecycle posture for SmartData. There is no API to version, deprecate or put under
+  SLA, so most of this record is an honest absence. The one live finding is a status
+  subdomain that is provisioned but empty.
+versioning:
+  published: false
+  scheme: null
+  note: >-
+    No versioning policy is published. The application's own backend is path-versioned
+    (https://app.ndsmartdata.com/api/v1/) but that surface is undocumented, unmarketed
+    and session-authenticated, so the v1 prefix is an implementation detail rather than
+    a public contract commitment.
+deprecation:
+  published: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation or sunset policy, and no RFC 8594 Sunset/Deprecation headers were
+    observed on any probed response.
+status_page:
+  published: false
+  url: https://status.ndsmartdata.com/
+  http_status: 200
+  provider: StatusCake
+  timezone: Australia/Brisbane
+  note: >-
+    IMPORTANT - this is a 200 that carries no information. The subdomain is a
+    provisioned StatusCake public report, but the report data endpoint
+    (https://app.statuscake.com/Workfloor/PublicReportHandler.php?PublicID=status.ndsmartdata.com)
+    returns {"Title":null,"Announce":null,"TestData":[]} - zero monitored tests, no
+    title, no announcements. The page renders as "Loading..." with an empty uptime
+    table. It is a configured shell, not a published status page, so NO StatusPage
+    pointer is wired into apis.yml. Recording the 200 without this check would have
+    credited SmartData with an operational surface it does not actually operate.
+    If National Drones adds monitors to this report it becomes a real status page and
+    should be re-probed.
+sla:
+  published: false
+  url: null
+changelog:
+  published: false
+  url: null
+  note: >-
+    No dated changelog or release notes. The closest published surface is
+    https://www.smart-data.com/software/smartdata-features/, which labels workflows by
+    maturity stage (Early access, Operational workflow, In development, Preview,
+    Scoped pilots, Active buildout) but carries no dates or version numbers.
+maturity_labels:
+  source: https://www.smart-data.com/software/smartdata-features/
+  workflows:
+    - name: DJI L3 Processing
+      stage: early access
+    - name: Elios Data Processing
+      stage: operational workflow
+    - name: Photogrammetry Engine
+      stage: in development
+    - name: Gaussian Splatting
+      stage: preview
+    - name: Powerline Analytics
+      stage: scoped pilots
+    - name: Forestry Intelligence
+      stage: active buildout
+deprecated_operations: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

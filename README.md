@@ -1,4 +1,4 @@
-# Smart Data
+# SmartData
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -42,28 +42,71 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Smart Data refers to intelligent data management platforms and APIs that enable organizations to process, integrate, enrich, and analyze structured and unstructured data in real-time. Smart Data platforms provide APIs for data enrichment, quality management, real-time data processing, master data management, and analytics integration.
+SmartData is a hosted drone-data workspace built and operated by **National Drones**, a CASA
+ReOC holder and Registered Training Organisation headquartered at Level 34, 1 Eagle Street,
+Brisbane, Australia. Teams bring processed, viewer-ready outputs from DJI Terra, Agisoft
+Metashape or their own photogrammetry workflow into SmartData and share one secure browser
+workspace where clients and asset owners can inspect, measure, compare and sign off on the
+data instead of passing files around.
+
+> **Correction, 2026-08-14.** Until this date this repository described a fictional company —
+> "Smart Data", a data enrichment / integration / data quality API vendor with three invented
+> APIs whose documentation URLs (`www.smart-data.com/docs/*`) have never existed and return
+> 404. That scaffold, and the plans / rate-limits / FinOps artifacts derived from it, have been
+> removed and rebuilt from the real company's own public pages. See `x-provenance-note` in
+> `apis.yml`.
 
 ## Overview
 
-Key capabilities of Smart Data platforms include:
+- **BYO data hosting** — host processed packages: orthomosaic hosted views, Cesium 3D Tiles,
+  tiled point clouds, packaged Gaussian Splat views. Raw project folders, raw photos and loose
+  GeoTIFF / LAS / LAZ / OBJ / FBX files are not direct uploads and are quoted separately.
+- **Inspection AI** — AI-assisted review for towers, poles, solar, roofs, structures and linear
+  assets, with detections, confidence, crops, annotations, status and evidence exports.
+- **Multi-view asset context** — move between 2D maps, 3D models, point clouds, Gaussian Splat,
+  thermal and source photos without losing asset context.
+- **Measurements and change** — distance, area, volume, stockpiles, terrain, vegetation
+  proximity, and change between repeat captures.
+- **Teams and governance** — shared workspaces, roles, review status, notifications and secure
+  access controls.
+- **Emerging workflows** — DJI L3 processing (early access), Elios confined-space data
+  (operational), photogrammetry engine (in development), Gaussian splatting (preview),
+  powerline analytics (scoped pilots), forestry intelligence (active buildout).
 
-- **Data Enrichment**: Augmenting records with entity information, company details, contact data, and semantic classifications
-- **Data Integration**: ETL pipelines, real-time event streaming, webhook delivery, and bidirectional data sync across enterprise systems
-- **Data Quality**: Automated profiling, anomaly detection, deduplication, standardization, and validation rules
-- **Real-Time Processing**: Streaming data pipelines that transform raw data into actionable business intelligence
+Industries served: power and utilities, telecommunications, mining and resources, forestry and
+environment, infrastructure and construction.
 
 ## APIs
 
-| API | Description |
-|-----|-------------|
-| Smart Data Enrichment API | Enriching records with additional context, metadata, and business intelligence |
-| Smart Data Integration API | Connecting and synchronizing data across disparate systems and applications |
-| Smart Data Quality API | Assessing, cleansing, and validating data quality at scale |
+**None.** SmartData publishes no public API, developer portal, SDK, webhook surface or
+machine-readable contract. Probed 2026-08-14: the 50-URL sitemap on `www.smart-data.com` has no
+`/docs`, `/api` or `/developers` page; `api.` / `docs.` / `developer.` subdomains do not resolve
+on either `smart-data.com` or `ndsmartdata.com`; and the only machine surface that exists is the
+Django REST backend the web application itself calls at `https://app.ndsmartdata.com/api/v1/`,
+which is undocumented, unmarketed, and answers anonymous callers with HTTP 403
+`{"detail":"Authentication credentials were not provided."}`.
+
+## Try it
+
+A public demo sandbox — the live SmartData viewer loaded with sample inspection and asset data,
+no signup — is at [demo.ndsmartdata.com](https://demo.ndsmartdata.com/).
+
+## Pricing
+
+Published in AUD and metered by hosted dataset count and seats. Storage is a stated fair-use
+allowance; overage is reviewed manually rather than billed automatically.
+
+| Plan | Price | Hosted datasets | Storage | Seats |
+|---|---|---|---|---|
+| BYO Dataset Pass | AUD 149/year | 1 | 50 GB | 2 |
+| BYO Starter | AUD 249/year | 3 | 150 GB | 5 |
+| BYO Pro | AUD 249/month | 15 | 500 GB | 10 |
+| BYO Enterprise | Custom | Custom / unlimited | 5 TB baseline | Custom / unlimited |
 
 ## Tags
 
-Analytics, Data Integration, Data Management, Data Enrichment, Data Quality, Real-Time Processing, Master Data Management, Streaming
+Drone Data, Geospatial, Asset Inspection, Photogrammetry, LiDAR, Point Cloud, 3D Visualization,
+Gaussian Splatting, Computer Vision, Infrastructure, Utilities, Mining, Forestry, Australia
 
 ## Maintainers
 

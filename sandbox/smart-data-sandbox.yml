@@ -1,0 +1,48 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.smart-data.com/
+provider: SmartData
+providerId: smart-data
+description: >-
+  SmartData publishes a public, no-signup demo sandbox of its viewer workspace. It is a
+  PRODUCT sandbox, not an API sandbox: there are no test credentials, test keys, test
+  modes, fixtures or trigger tooling, because SmartData ships no public API. The
+  sandbox is loaded with sample inspection and asset data so an evaluator can drive the
+  real viewer experience in a browser before buying a plan.
+sandbox:
+  type: hosted-demo
+  public: true
+  credentials_required: false
+  url: https://demo.ndsmartdata.com/
+  http_status: 200
+  title: SmartData Demo Viewer
+  linked_from:
+    - https://www.smart-data.com/
+    - https://www.smart-data.com/software/byo-data-hosting/
+  contents: >-
+    Sample inspection and asset data rendered through the live SmartData viewer -
+    2D map, 3D model, point cloud, Gaussian Splat, thermal and inspection AI views.
+    The provider describes it as "the live sandbox to explore the SmartData viewer
+    experience with sample inspection and asset data" and links it directly to the
+    live workspace.
+  limitations: >-
+    The demo is a client-rendered single-page viewer served from an S3/CloudFront
+    origin that returns 403 AccessDenied for any path other than the entry point, so
+    nothing about it is machine-readable or scriptable. Evaluation is human-only.
+test_modes: []
+test_credentials: []
+test_data: []
+fixtures: []
+time_simulation: null
+notes:
+  - >-
+    Signup for the paid tiers is self-service and carries a plan hint in the query
+    string (https://app.ndsmartdata.com/accounts/register/?plan=byo-pass|byo-start|byo-pro),
+    but a registered account is a live tenant, not a sandbox tenant - SmartData
+    documents no separate test/live separation.
+  - >-
+    A guided demo booking ("Book a guided demo" / "Book a SmartData walkthrough") is
+    offered alongside the self-serve sandbox and is contact-led.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

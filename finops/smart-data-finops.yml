@@ -6,148 +6,115 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Smart Data
+provider: SmartData
 providerId: smart-data
-publisherName: Smart Data
-serviceCategory: API
+publisherName: SmartData (National Drones)
+serviceCategory: SaaS
+generated: '2026-08-14'
+method: derived
+source: plans/smart-data-plans-pricing.yml
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-08-14'
+# 2026-08-14: the 2026-05-04 bulk-sweep version of this file described a USD,
+# usage-based, per-API-request billing model with api_requests / data_egress /
+# compute_seconds meters and three invented API products. None of that is SmartData's
+# billing model. Rebuilt from the provider's published BYO Data Hosting pricing:
+# AUD subscriptions metered by hosted dataset count and seats, with storage as a
+# stated fair-use allowance and manual overage review.
 tags:
-  - Analytics
-  - Data Integration
-  - Data Management
-  - Data Enrichment
-  - Data Quality
-  - Real-Time Processing
-  - Master Data Management
-  - Streaming
+  - Drone Data
+  - Data Hosting
+  - Geospatial
   - FinOps
   - Cost Management
   - FOCUS
-description: FinOps framework definition for the Smart Data API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: >-
+  FOCUS-aligned cost mapping for SmartData, derived from the provider's published
+  subscription pricing. SmartData bills a recurring SaaS subscription in Australian
+  dollars, priced by the number of hosted drone datasets a team keeps active and the
+  number of seats, not by API consumption. There is no metered API charge because
+  there is no public API.
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Committed subscription
+  billingFrequency: Annual (Dataset Pass, Starter) and Monthly (Pro)
+  billingCurrency: AUD
   chargeCategories:
-    - Usage
     - Purchase
-    - Tax
-    - Credit
-    - Adjustment
   chargeFrequency: Recurring
+  selfServiceCheckout: true
+  enterpriseMotion: contact-led
+  overagePolicy: >-
+    Provider states storage is a fair-use infrastructure allowance and that overage is
+    reviewed manually for the MVP rather than charged through automatic overage billing.
 focusColumns:
-  ServiceName: Smart Data
-  ServiceCategory: Developer Tools / API
-  ProviderName: Smart Data
-  PublisherName: Smart Data
-  InvoiceIssuerName: Smart Data
-  PricingCategory: Usage-Based
-  PricingUnit: request
-  BillingCurrency: USD
-  ChargeCategory: Usage
+  ServiceName: SmartData
+  ServiceCategory: Analytics
+  ProviderName: SmartData
+  PublisherName: National Drones
+  InvoiceIssuerName: National Drones
+  PricingCategory: Committed
+  PricingUnit: hosted dataset
+  BillingCurrency: AUD
+  ChargeCategory: Purchase
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
-    aggregation: sum
+  - name: hosted_datasets
+    description: >-
+      Count of processed, viewer-ready drone datasets kept active in the SmartData
+      workspace. This is the provider's stated primary customer-facing limit.
+    unit: dataset
+    aggregation: max
+    billable: true
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
+      - plan
+      - workspace
+  - name: seats
+    description: Named users with access to the SmartData workspace.
+    unit: user
+    aggregation: max
+    billable: true
+    dimensions:
+      - plan
+      - workspace
+  - name: included_storage
+    description: >-
+      Storage consumed by hosted dataset packages. Included in the plan as a fair-use
+      allowance; not billed as a metered unit.
     unit: GB
-    aggregation: sum
+    aggregation: max
+    billable: false
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Smart Data Enrichment API
-    baseURL: ''
-    tags:
-      - Data Enrichment
-      - Entity Resolution
-      - Data Quality
-    serviceName: Smart Data Enrichment API
-    serviceCategory: API
-  - name: Smart Data Integration API
-    baseURL: ''
-    tags:
-      - Data Integration
-      - ETL
-      - Streaming
-      - Webhooks
-    serviceName: Smart Data Integration API
-    serviceCategory: API
-  - name: Smart Data Quality API
-    baseURL: ''
-    tags:
-      - Data Quality
-      - Data Cleansing
-      - Validation
-      - Deduplication
-    serviceName: Smart Data Quality API
-    serviceCategory: API
+      - plan
+      - workspace
+outOfScopeCharges:
+  - name: Conversion and processing
+    description: >-
+      Raw DJI/Agisoft project folders, raw photos, loose GeoTIFF, loose LAS/LAZ and
+      loose OBJ/FBX files are not direct BYO uploads and are quoted separately as
+      conversion or processing work.
+    pricing: quoted
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Cost per hosted dataset per year
+    metric: annualised_plan_price / hosted_datasets
+    values:
+      - plan: BYO Dataset Pass
+        value: 'AUD 149.00'
+      - plan: BYO Starter
+        value: 'AUD 83.00'
+      - plan: BYO Pro
+        value: 'AUD 199.20'
+    note: >-
+      Derived arithmetic from the provider's published prices and dataset allowances
+      (Pro annualised at 249 x 12 / 15). Not a price SmartData publishes.
+  - name: Cost per seat per year
+    metric: annualised_plan_price / seats
+    values:
+      - plan: BYO Dataset Pass
+        value: 'AUD 74.50'
+      - plan: BYO Starter
+        value: 'AUD 49.80'
+      - plan: BYO Pro
+        value: 'AUD 298.80'
+    note: Derived arithmetic from published prices and seat counts.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
