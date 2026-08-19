@@ -37,7 +37,7 @@ accessModel:
   method: searched
 created: '2026-03-16'
 modified: '2026-08-14'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 tags:
   - Drone Data
   - Geospatial
