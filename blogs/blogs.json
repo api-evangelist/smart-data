@@ -2,10 +2,13 @@
   "repo": "smart-data",
   "feeds": [
     {
-      "source": "https://www.smart-data.com/docs/",
-      "error": "HTTPError"
+      "source": "https://www.smart-data.com/contact/",
+      "feed_url": "https://www.smart-data.com/contact/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-08-06T14:08:46Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "post_count": 3
 }
