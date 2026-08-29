@@ -16,6 +16,17 @@ description: >-
   infrastructure and construction. SmartData is sold as an end-user SaaS product: it
   publishes pricing, a public demo sandbox and self-service signup, but no API,
   developer portal, SDK, webhook surface or machine-readable contract of any kind.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/smart-data.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/smart-data/refs/heads/main/apis.yml
