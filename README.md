@@ -64,73 +64,103 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-SmartData is a hosted drone-data workspace built and operated by **National Drones**, a CASA
-ReOC holder and Registered Training Organisation headquartered at Level 34, 1 Eagle Street,
-Brisbane, Australia. Teams bring processed, viewer-ready outputs from DJI Terra, Agisoft
-Metashape or their own photogrammetry workflow into SmartData and share one secure browser
-workspace where clients and asset owners can inspect, measure, compare and sign off on the
-data instead of passing files around.
+SmartData is a hosted drone-data workspace built and operated by National Drones, a CASA ReOC holder and Registered Training Organisation headquartered at Level 34, 1 Eagle Street, Brisbane, Australia. Teams bring processed, viewer-ready outputs from DJI Terra, Agisoft Metashape or their own photogrammetry workflow into SmartData and share one secure browser workspace where clients and asset owners can inspect, measure, compare and sign off on the data instead of passing files around. The platform hosts orthomosaic views, Cesium 3D Tiles, tiled point clouds and Gaussian Splat packages, layers AI-assisted inspection review, measurements, change detection, reporting and role-based team governance over them, and is expanding into processing and analytics workflows for DJI L3 LiDAR, Elios confined-space data, powerline corridor analytics and forestry intelligence. It serves power and utilities, telecommunications, mining and resources, forestry and environment, and infrastructure and construction. SmartData is sold as an end-user SaaS product: it publishes pricing, a public demo sandbox and self-service signup, but no API, developer portal, SDK, webhook surface or machine-readable contract of any kind.
 
-> **Correction, 2026-08-14.** Until this date this repository described a fictional company —
-> "Smart Data", a data enrichment / integration / data quality API vendor with three invented
-> APIs whose documentation URLs (`www.smart-data.com/docs/*`) have never existed and return
-> 404. That scaffold, and the plans / rate-limits / FinOps artifacts derived from it, have been
-> removed and rebuilt from the real company's own public pages. See `x-provenance-note` in
-> `apis.yml`.
+**Areas:** Drone Data · Geospatial · Asset Inspection · Photogrammetry · LiDAR · Point Cloud · 3D Visualization · Gaussian Splatting · Computer Vision · Infrastructure · Utilities · Mining
 
-## Overview
+## SmartData on APIs.io
 
-- **BYO data hosting** — host processed packages: orthomosaic hosted views, Cesium 3D Tiles,
-  tiled point clouds, packaged Gaussian Splat views. Raw project folders, raw photos and loose
-  GeoTIFF / LAS / LAZ / OBJ / FBX files are not direct uploads and are quoted separately.
-- **Inspection AI** — AI-assisted review for towers, poles, solar, roofs, structures and linear
-  assets, with detections, confidence, crops, annotations, status and evidence exports.
-- **Multi-view asset context** — move between 2D maps, 3D models, point clouds, Gaussian Splat,
-  thermal and source photos without losing asset context.
-- **Measurements and change** — distance, area, volume, stockpiles, terrain, vegetation
-  proximity, and change between repeat captures.
-- **Teams and governance** — shared workspaces, roles, review status, notifications and secure
-  access controls.
-- **Emerging workflows** — DJI L3 processing (early access), Elios confined-space data
-  (operational), photogrammetry engine (in development), Gaussian splatting (preview),
-  powerline analytics (scoped pilots), forestry intelligence (active buildout).
+Everything profiled for SmartData is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/smart-data/](https://apis.io/providers/smart-data/)** — or go straight to one of the APIs or properties below.
 
-Industries served: power and utilities, telecommunications, mining and resources, forestry and
-environment, infrastructure and construction.
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**None.** SmartData publishes no public API, developer portal, SDK, webhook surface or
-machine-readable contract. Probed 2026-08-14: the 50-URL sitemap on `www.smart-data.com` has no
-`/docs`, `/api` or `/developers` page; `api.` / `docs.` / `developer.` subdomains do not resolve
-on either `smart-data.com` or `ndsmartdata.com`; and the only machine surface that exists is the
-Django REST backend the web application itself calls at `https://app.ndsmartdata.com/api/v1/`,
-which is undocumented, unmarketed, and answers anonymous callers with HTTP 403
-`{"detail":"Authentication credentials were not provided."}`.
+#### Security (1)
 
-## Try it
+Authentication, trust centre, and vulnerability disclosure.
 
-A public demo sandbox — the live SmartData viewer loaded with sample inspection and asset data,
-no signup — is at [demo.ndsmartdata.com](https://demo.ndsmartdata.com/).
+- [Smart Data Domain Security](https://apis.io/security/smart-data/smart-data-domain-security/)
 
-## Pricing
+#### Plans and pricing (1)
 
-Published in AUD and metered by hosted dataset count and seats. Storage is a stated fair-use
-allowance; overage is reviewed manually rather than billed automatically.
+Published plans, tiers and prices.
 
-| Plan | Price | Hosted datasets | Storage | Seats |
-|---|---|---|---|---|
-| BYO Dataset Pass | AUD 149/year | 1 | 50 GB | 2 |
-| BYO Starter | AUD 249/year | 3 | 150 GB | 5 |
-| BYO Pro | AUD 249/month | 15 | 500 GB | 10 |
-| BYO Enterprise | Custom | Custom / unlimited | 5 TB baseline | Custom / unlimited |
+- [Smart Data Plans Pricing](https://apis.io/plans/smart-data/smart-data-plans-pricing/)
 
-## Tags
+#### Rate limits (1)
 
-Drone Data, Geospatial, Asset Inspection, Photogrammetry, LiDAR, Point Cloud, 3D Visualization,
-Gaussian Splatting, Computer Vision, Infrastructure, Utilities, Mining, Forestry, Australia
+Published request limits.
 
-## Maintainers
+- [Smart Data Rate Limits](https://apis.io/rate-limits/smart-data/smart-data-rate-limits/)
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Smart Data Finops](https://apis.io/finops/smart-data/smart-data-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.smart-data.com/)
+- [Pricing](https://www.smart-data.com/software/byo-data-hosting/#pricing)
+- [Sign up](https://app.ndsmartdata.com/accounts/register/)
+- [Support](https://www.smart-data.com/contact/)
+- [Blog](https://www.smart-data.com/insights/)
+- [Terms of service](https://www.smart-data.com/terms-and-conditions/)
+- [Privacy policy](https://www.smart-data.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 22.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 76.3 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/smart-data/](https://apis.io/providers/smart-data/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for SmartData: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/smart-data/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
