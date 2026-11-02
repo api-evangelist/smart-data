@@ -1,0 +1,238 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: SmartData
+providerId: smart-data
+generated: '2026-08-14'
+method: searched
+source: https://www.smart-data.com/software/byo-data-hosting/#pricing
+created: '2026-05-04'
+modified: '2026-08-14'
+# 2026-08-14: this file previously held a fabricated three-tier API-request scaffold
+# (Free / Professional / Enterprise, USD, per-request quotas) written by the
+# 2026-05-04 bulk sweep. SmartData sells none of that. It has been replaced in full
+# with the tiers SmartData actually publishes on its BYO Data Hosting page: annual
+# and monthly subscriptions priced in AUD and metered by HOSTED DATASET COUNT, not
+# by API calls. SmartData publishes no API pricing because it publishes no API.
+plan_count: 4
+currency: AUD
+billing_unit: hosted dataset
+notes: >-
+  SmartData's published pricing is for hosting processed, viewer-ready drone datasets
+  (orthomosaic, Cesium 3D Tiles, point cloud, Gaussian Splat) in the SmartData viewer.
+  The customer-facing meter is the number of hosted datasets; included storage is stated
+  by the provider as a fair-use infrastructure allowance rather than a billed meter.
+  SmartData states overage is reviewed manually for the MVP rather than charged through
+  automatic overage billing. Raw DJI/Agisoft project folders, raw photos, loose GeoTIFF,
+  loose LAS/LAZ and loose OBJ/FBX are explicitly NOT covered by these plans and are
+  quoted separately as conversion or processing work.
+tags:
+  - Drone Data
+  - Data Hosting
+  - Geospatial
+  - Inspection
+  - Asset Management
+description: >-
+  Published subscription plans for the SmartData BYO drone data hosting platform,
+  harvested verbatim from the provider's own pricing section. Prices, dataset
+  allowances, storage allowances and seat counts are as published on 2026-08-14.
+plans:
+  - id: byo-dataset-pass
+    name: BYO Dataset Pass
+    type: paid
+    description: >-
+      The low-friction first upload option for proving one processed dataset in SmartData.
+    price: '149.00'
+    currency: AUD
+    period: year
+    signup: https://app.ndsmartdata.com/accounts/register/?plan=byo-pass
+    entries:
+      - label: Hosted datasets
+        name: hosted_datasets
+        type: quota
+        metric: datasets
+        limit: 1
+        timeFrame: year
+        unit: 1
+      - label: Included storage
+        name: included_storage
+        type: quota
+        metric: GB
+        limit: 50
+        timeFrame: year
+        unit: 1
+        note: Fair-use infrastructure allowance, per the provider.
+      - label: Seats
+        name: seats
+        type: quota
+        metric: users
+        limit: 2
+        unit: 1
+    elements:
+      - name: Orthomosaic hosted views
+      - name: Cesium 3D Tiles hosted views
+      - name: Point cloud hosted views
+      - name: Gaussian Splat hosted views
+  - id: byo-starter
+    name: BYO Starter
+    type: paid
+    description: >-
+      For small teams hosting a few processed drone datasets across early customer or
+      internal projects.
+    price: '249.00'
+    currency: AUD
+    period: year
+    signup: https://app.ndsmartdata.com/accounts/register/?plan=byo-start
+    entries:
+      - label: Hosted datasets
+        name: hosted_datasets
+        type: quota
+        metric: datasets
+        limit: 3
+        timeFrame: year
+        unit: 1
+      - label: Included storage
+        name: included_storage
+        type: quota
+        metric: GB
+        limit: 150
+        timeFrame: year
+        unit: 1
+        note: Fair-use infrastructure allowance, per the provider.
+      - label: Seats
+        name: seats
+        type: quota
+        metric: users
+        limit: 5
+        unit: 1
+    elements:
+      - name: Orthomosaic hosted views
+      - name: Cesium 3D Tiles hosted views
+      - name: Point cloud hosted views
+      - name: Gaussian Splat hosted views
+  - id: byo-pro
+    name: BYO Pro
+    type: paid
+    description: >-
+      For active teams managing recurring uploads, larger hosted datasets, and wider
+      viewer access.
+    price: '249.00'
+    currency: AUD
+    period: month
+    signup: https://app.ndsmartdata.com/accounts/register/?plan=byo-pro
+    entries:
+      - label: Hosted datasets
+        name: hosted_datasets
+        type: quota
+        metric: datasets
+        limit: 15
+        timeFrame: month
+        unit: 1
+      - label: Included storage
+        name: included_storage
+        type: quota
+        metric: GB
+        limit: 500
+        timeFrame: month
+        unit: 1
+        note: Fair-use infrastructure allowance, per the provider.
+      - label: Seats
+        name: seats
+        type: quota
+        metric: users
+        limit: 10
+        unit: 1
+    elements:
+      - name: Orthomosaic hosted views
+      - name: Cesium 3D Tiles hosted views
+      - name: Point cloud hosted views
+      - name: Gaussian Splat hosted views
+  - id: byo-enterprise
+    name: BYO Enterprise
+    type: enterprise
+    description: >-
+      For asset owners that need a contact-led SmartData platform arrangement rather
+      than normal self-service checkout. Self-hosted and private cloud arrangements are
+      contact-led because security, storage, backups, updates, support and integration
+      requirements are scoped before deployment.
+    price: custom
+    currency: AUD
+    period: custom
+    signup: https://www.smart-data.com/contact/
+    entries:
+      - label: Hosted datasets
+        name: hosted_datasets
+        type: quota
+        metric: datasets
+        limit: -1
+        unit: 1
+        note: Custom or unlimited, per the provider.
+      - label: Baseline storage
+        name: included_storage
+        type: quota
+        metric: TB
+        limit: 5
+        unit: 1
+        note: Stated as a 5 TB baseline storage allowance.
+      - label: Seats
+        name: seats
+        type: quota
+        metric: users
+        limit: -1
+        unit: 1
+        note: Custom or unlimited, per the provider.
+    elements:
+      - name: Contact-led platform arrangement
+      - name: Self-hosted / private cloud option (scoped)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  units:
+  - data
+  - seat
+  plans:
+  - name: BYO Dataset Pass
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - seat
+    periods:
+    - year
+  - name: BYO Starter
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - seat
+    periods:
+    - year
+  - name: BYO Pro
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - seat
+    periods:
+    - month
+  - name: BYO Enterprise
+    access: enterprise
+    model: free
+    model_how: derived
+    units:
+    - data
+    - other
+    - seat
+    periods:
+    - term
